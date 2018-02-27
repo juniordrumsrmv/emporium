@@ -90,7 +90,7 @@ return [
             ],
             'orm_default' => [
                 'drivers' => [
-                    'Emporium\Entity' => 'Emporium_driver'
+                    'Application\Entity' => 'Emporium_driver'
                 ]
             ]
         ],

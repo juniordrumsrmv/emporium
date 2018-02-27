@@ -1,7 +1,7 @@
 <?php
 
 use Doctrine\ORM\EntityManager;
-use Emporium\Entity\User;
+use Application\Entity\User;
 
 return [
     'doctrine' => [
