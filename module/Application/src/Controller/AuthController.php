@@ -46,6 +46,7 @@ class AuthController extends AbstractActionController
                 }
             }
         }
+        $this->layout('layout/login');
         return new ViewModel([
             'form' => $form,
             'messageError' => $messageError
