@@ -1,9 +1,4 @@
 <?php
-/**
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 
 namespace Application;
 
@@ -15,12 +10,13 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'router' => [
         'routes' => [
-            'home' => [
+            'emporium' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/home',
+                    'route'    => '/emporium',
                     'defaults' => [
-                        'controller' => Controller\IndexController::class,
+                        'controller' => Controller\EmporiumController::class,
+//                        'controller' => Controller\IndexController::class,
                         'action'     => 'index',
                     ],
                 ],
@@ -28,7 +24,7 @@ return [
             'login' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/auth/login',
+                    'route'    => '/',
                     'defaults' => [
                         'controller' => Controller\AuthController::class,
                         'action'     => 'login',
@@ -38,7 +34,7 @@ return [
             'logout' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/auth/logout',
+                    'route'    => '/logout',
                     'defaults' => [
                         'controller' => Controller\AuthController::class,
                         'action'     => 'logout',
@@ -60,6 +56,7 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
+            Controller\EmporiumController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

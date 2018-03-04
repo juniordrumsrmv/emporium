@@ -23,7 +23,7 @@ class AuthController extends AbstractActionController
     public function loginAction()
     {
         if ($this->authService->hasIdentity()) {
-            return $this->redirect()->toRoute('admin-blog/post');
+            return $this->redirect()->toRoute('emporium');
         }
 
         $form = new LoginForm();
@@ -40,7 +40,7 @@ class AuthController extends AbstractActionController
 
                 $result = $this->authService->authenticate();
                 if ($result->isValid()) {
-                    return $this->redirect()->toRoute('admin/users');
+                    return $this->redirect()->toRoute('emporium');
                 } else {
                     $messageError = "Login Inválido!";
                 }
