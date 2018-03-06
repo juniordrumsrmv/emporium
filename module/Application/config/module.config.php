@@ -16,7 +16,6 @@ return [
                     'route'    => '/emporium',
                     'defaults' => [
                         'controller' => Controller\EmporiumController::class,
-//                        'controller' => Controller\IndexController::class,
                         'action'     => 'index',
                     ],
                 ],

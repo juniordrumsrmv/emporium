@@ -1,0 +1,178 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?= $this->headTitle('Emporium')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?= $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Le styles -->
+    <?= $this->headLink([
+        'rel' => 'shortcut icon',
+        'type' => 'image/vnd.microsoft.icon',
+        'href' => $this->basePath() . '/img/favicon.ico'
+    ])
+        ->prependStylesheet($this->basePath('css/ace-ie.min.css'),
+            'screen',
+            'lte IE 9'
+        ) //ace styles
+        ->prependStylesheet($this->basePath('css/ace-rtl.min.css'))
+        ->prependStylesheet($this->basePath('css/ace-skins.min.css'))
+        ->prependStylesheet($this->basePath('css/ace-part2.min.css'),
+            'screen',
+            'lte IE 9',
+            array(
+                'class' => 'ace-main-stylesheet'
+            )
+        ) //ace styles
+        ->prependStylesheet($this->basePath('css/ace.min.css'),
+            'screen',
+            false,
+            array(
+                'class' => 'ace-main-stylesheet',
+                'id' => 'main-ace-style'
+            )
+        ) //ace styles
+        ->prependStylesheet($this->basePath('css/fonts.googleapis.com.css')) //text fonts
+        ->prependStylesheet($this->basePath('css/font-awesome.min.css')) //bootstrap & fontawesome
+        ->prependStylesheet($this->basePath('css/style.css'))
+        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+        ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+    ?>
+
+    <!-- Scripts Head-->
+    <?= $this->headScript()
+        ->prependFile($this->basePath('js/ace-extra.min.js')) // ace settings handler
+        ->prependFile($this->basePath('js/bootstrap.min.js'))
+        ->appendFile($this->basePath('js/jquery-2.2.4.min.js'))
+
+    ?>
+
+</head>
+
+<body>
+
+<!--<div class="navbar navbar-fixed-top login-banner">-->
+<!--    <div class="col-md-12">-->
+<!--        <img src="--><?//= $this->basePath() . '/img/logo-login.jpg';?><!--"-->
+<!--             class="img-responsive" align="center">-->
+<!--    </div>-->
+<!--</div>-->
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top ace-save-state top-div">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header pull-left">
+            <a href="index.html" class="navbar-brand">
+                <small>
+                    <img src="<?= $this->basePath() . '/img/logo-top.png';?>" class="img-responsive img-logo">
+
+                </small>
+            </a>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+
+                <li class="light-orange dropdown-modal">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" src="/img/user.png" alt="Jason's Photo" />
+                        <span class="user-info">
+                        <small>Olá</small>
+                            Adm
+                        </span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="profile.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                Perfil
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="<?php echo $this->url('logout') ?>">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                Sair
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+
+<div class="container" >
+    <?= $this->content; ?>
+</div>
+
+<div class="container" >
+    <hr>
+
+    <footer class="navbar">
+        <p>&copy; 2018 by Conecto Sistemas. All rights reserved.</p>
+    </footer>
+</div>
+
+<!--Script footer-->
+<?= $this->inlineScript()
+    ->appendFile($this->basePath('js/jquery-2.1.4.min.js'),'text/javascript',
+        array(
+            'conditional' => '!IE'
+        )
+    )
+    ->appendFile($this->basePath('js/jquery-1.11.3.min.js'),'text/javascript',
+        array(
+            'conditional' => '!IE'
+        )
+    )
+?>
+
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<?= $this->inlineScript()
+    ->appendFile($this->basePath('js/excanvas.min.js'),'text/javascript',
+        array(
+            'conditional' => '!IE 8'
+        )
+    )
+    ->appendFile($this->basePath('js/jquery-ui.custom.min.js'))
+    ->appendFile($this->basePath('js/jquery.ui.touch-punch.min.js'))
+    ->appendFile($this->basePath('js/jquery.easypiechart.min.js'))
+    ->appendFile($this->basePath('js/jquery.sparkline.index.min.js'))
+    ->appendFile($this->basePath('js/jquery.flot.min.js'))
+    ->appendFile($this->basePath('js/jquery.flot.pie.min.js'))
+    ->appendFile($this->basePath('js/jquery.flot.resize.min.js'))
+    ->appendFile($this->basePath('js/ace-elements.min.js'))
+    ->appendFile($this->basePath('js/ace.min.js'))
+    ->appendFile($this->basePath('js/ace-script.js'))
+?>
+
+</body>
+
+</html>

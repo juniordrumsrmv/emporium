@@ -81,3 +81,12 @@ div.container a.navbar-brand > img {
 .tleft {
     text-align: left;
 }
+
+.top-div {
+    background-image: url("../img/header-bg.jpg");
+    background-repeat: repeat-x;
+}
+
+.dark-orange {
+    background-color: #f76319;
+}
