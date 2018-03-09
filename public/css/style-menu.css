@@ -2,3 +2,9 @@
     background-image: url("../img/header-bg-small.jpg");
     background-repeat: repeat-x;
 }
+
+.item-menu {
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+}
